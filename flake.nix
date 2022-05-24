@@ -26,11 +26,13 @@
       bluetooth = import ./nixos-modules/bluetooth/persistence.nix;
       environment = import ./nixos-modules/environment/persistence.nix;
       networkmanager = import ./nixos-modules/networkmanager/persistence.nix;
+      sound = import ./nixos-modules/sound/persistence.nix;
       default = {
         imports = [
           bluetooth
           environment
           networkmanager
+          sound
         ];
       };
     };
