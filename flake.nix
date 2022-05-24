@@ -24,9 +24,11 @@
     formatter = lib.genAttrs defaultSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     nixosModules = rec {
       environment = import ./nixos-modules/environment/persistence.nix;
+      networkmanager = import ./nixos-modules/networkmanager/persistence.nix;
       default = {
         imports = [
           environment
+          networkmanager
         ];
       };
     };
