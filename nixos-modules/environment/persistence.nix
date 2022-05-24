@@ -53,8 +53,32 @@ in {
           Note that setting paths against multiple of these persistence levels to split up your persistent storage is an experimental goal, not recommended at this time.
         '';
       };
+
+      machineId.persistence = mkOption {
+        type = types.attrsOf types.raw;
+        default = {
+          normal.files = ["/etc/machine-id"];
+        };
+        description =
+          # See http://jdebp.uk./Softwares/nosh/guide/commands/machine-id.xml
+          ''
+            Retain a unique machine id in /etc/machine-id.
+            The machine-id should be considered confidential (for privacy, not security).
+            Note that Google Chrome is known to transmit a hashed version of this id in order to lock user profiles to known machines.
+            It is also by various system tools such as journalctl, systemd-networkd, and
+          '';
+      };
     };
   };
 
-  config = {};
+  config = let
+    persistence = builtins.intersectAttrs config.environment.automaticPersistence cfg.machineId.persistence;
+  in
+    lib.mkIf (persistence != {}) {
+      environment.persistence =
+        lib.mkMerge
+        (lib.mapAttrsToList
+          (k: v: {${config.environment.automaticPersistence.${k}.path} = v;})
+          persistence);
+    };
 }
