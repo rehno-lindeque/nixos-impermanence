@@ -28,6 +28,7 @@
       networkmanager = import ./nixos-modules/networkmanager/persistence.nix;
       sound = import ./nixos-modules/sound/persistence.nix;
       ssh = import ./nixos-modules/ssh/persistence.nix;
+      tailscale = import ./nixos-modules/tailscale/persistence.nix;
       default = {
         imports = [
           bluetooth
@@ -35,6 +36,7 @@
           networkmanager
           sound
           ssh
+          tailscale
         ];
       };
     };
