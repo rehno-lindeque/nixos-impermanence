@@ -68,7 +68,7 @@ nix run nixpkgs#ncdu -- -x /
 * [Impermanence project](https://github.com/nix-community/impermanence)
 * [Impermanence wiki](https://nixos.wiki/wiki/Impermanence)
 * Elis Hirwin's blog:
-  * [tmfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
-  * [tmfs as home](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
+  * [tmpfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
+  * [tmpfs as home](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
 * Graham Christensen's blog:
   * [Erase your darlings](https://grahamc.com/blog/erase-your-darlings)
