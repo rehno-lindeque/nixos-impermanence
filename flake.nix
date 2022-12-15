@@ -28,6 +28,8 @@
       networkmanager = import ./nixos-modules/networkmanager/persistence.nix;
       sound = import ./nixos-modules/sound/persistence.nix;
       ssh = import ./nixos-modules/ssh/persistence.nix;
+      sudo = import ./nixos-modules/sudo/persistence.nix;
+      systemd = import ./nixos-modules/systemd/persistence.nix;
       tailscale = import ./nixos-modules/tailscale/persistence.nix;
       default = {
         imports = [
@@ -36,6 +38,8 @@
           networkmanager
           sound
           ssh
+          sudo
+          systemd
           tailscale
         ];
       };
