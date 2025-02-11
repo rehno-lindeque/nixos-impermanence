@@ -2,7 +2,7 @@
   description = "Impermanence options for NixOS modules";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs"; # /nixos-22.05
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Input is used for checks
     impermanence.url = "github:nix-community/impermanence";
@@ -26,7 +26,6 @@
       bluetooth = import ./nixos-modules/bluetooth/persistence.nix;
       environment = import ./nixos-modules/environment/persistence.nix;
       networkmanager = import ./nixos-modules/networkmanager/persistence.nix;
-      sound = import ./nixos-modules/sound/persistence.nix;
       ssh = import ./nixos-modules/ssh/persistence.nix;
       sudo = import ./nixos-modules/sudo/persistence.nix;
       systemd = import ./nixos-modules/systemd/persistence.nix;
@@ -36,7 +35,6 @@
           bluetooth
           environment
           networkmanager
-          sound
           ssh
           sudo
           systemd
