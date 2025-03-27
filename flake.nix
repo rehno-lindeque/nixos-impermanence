@@ -30,6 +30,7 @@
       sudo = import ./nixos-modules/sudo/persistence.nix;
       systemd = import ./nixos-modules/systemd/persistence.nix;
       tailscale = import ./nixos-modules/tailscale/persistence.nix;
+      users = import ./nixos-modules/users/persistence.nix;
       default = {
         imports = [
           bluetooth
@@ -39,6 +40,7 @@
           sudo
           systemd
           tailscale
+          users
         ];
       };
     };
