@@ -57,7 +57,12 @@ in {
       machineId.persistence = mkOption {
         type = types.attrsOf types.raw;
         default = {
-          normal.files = ["/etc/machine-id"];
+          normal.files = [
+            {
+              file = "/etc/machine-id";
+              method = "reconcile";
+            }
+          ];
         };
         description =
           # See http://jdebp.uk./Softwares/nosh/guide/commands/machine-id.xml

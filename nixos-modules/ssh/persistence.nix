@@ -10,10 +10,22 @@ in {
       type = types.attrsOf types.raw;
       default = {
         secret.files = [
-          "/etc/ssh/ssh_host_ed25519_key"
-          "/etc/ssh/ssh_host_ed25519_key.pub"
-          "/etc/ssh/ssh_host_rsa_key"
-          "/etc/ssh/ssh_host_rsa_key.pub"
+          {
+            file = "/etc/ssh/ssh_host_ed25519_key";
+            method = "reconcile";
+          }
+          {
+            file = "/etc/ssh/ssh_host_ed25519_key.pub";
+            method = "reconcile";
+          }
+          {
+            file = "/etc/ssh/ssh_host_rsa_key";
+            method = "reconcile";
+          }
+          {
+            file = "/etc/ssh/ssh_host_rsa_key.pub";
+            method = "reconcile";
+          }
         ];
       };
       description = ''
